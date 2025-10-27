@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pistitch"
+version = "0.1.0"
+description = "Generating knitting & crochet patterns"
+readme = "README.md"
+authors = [ { name = "Charlotte Cambier van Nooten" } ]
+license = { text = "MIT" }
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pistitch*"]
+
+[project.scripts]
+pistitch = "pistitch.cli:main"
+
+[project.optional-dependencies]
+all = ["svgwrite", "Pillow"]
