@@ -16,6 +16,8 @@ from .patterns import (
 )
 from .exporters import to_svg, to_ascii, to_png, to_pdf, to_text
 from .recipes import (
+    garter_pattern,
+    stockinette_pattern,
     rib_pattern,
     seed_pattern,
     moss_pattern,
@@ -24,6 +26,9 @@ from .recipes import (
     cable_swatch,
     single_crochet_rectangle,
     shell_stitch_pattern,
+    # Backwards compatibility
+    garter_stitch,
+    stockinette_stitch,
 )
 from .sizing import (
     MetricNeedleSizes,
@@ -58,10 +63,15 @@ __all__ = [
     "to_pdf",
     "to_text",
     # Knitting recipes
+    "garter_pattern",
+    "stockinette_pattern",
     "rib_pattern",
     "seed_pattern",
     "moss_pattern",
     "cable_swatch",
+    # Backwards compatibility
+    "garter_stitch",
+    "stockinette_stitch",
     # Crochet recipes
     "granny_square",
     "granny_square_chart",

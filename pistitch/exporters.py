@@ -55,6 +55,14 @@ def to_pdf(pattern, path, cell_size=12, padding=4):
     pdf.save()
 
 
-def to_text(chart):
-    """Render a semantic chart to a text description."""
-    return chart.as_text()
+def to_text(pattern):
+    """Render a pattern to a text description.
+
+    Works with both semantic charts (KnitChart, CrochetChart) and
+    grid patterns (KnitPattern, CrochetPattern, Pattern).
+    """
+    if hasattr(pattern, "as_text"):
+        return pattern.as_text()
+    else:
+        # Fallback for patterns without as_text method
+        return f"Pattern: {pattern.width} × {pattern.height} stitches"

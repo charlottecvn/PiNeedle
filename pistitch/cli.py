@@ -2,6 +2,8 @@
 
 import argparse
 from .recipes import (
+    garter_pattern,
+    stockinette_pattern,
     rib_pattern,
     seed_pattern,
     moss_pattern,
@@ -25,6 +27,8 @@ def main(argv=None):
         "--recipe",
         choices=[
             # Knitting patterns
+            "garter",
+            "stockinette",
             "rib",
             "seed",
             "moss",
@@ -60,7 +64,13 @@ def main(argv=None):
     args = parser.parse_args(argv)
 
     # Create pattern based on recipe
-    if args.recipe == "rib":
+    if args.recipe == "garter":
+        pattern = garter_pattern(args.width, args.height)
+        craft_type = "knit"
+    elif args.recipe == "stockinette":
+        pattern = stockinette_pattern(args.width, args.height)
+        craft_type = "knit"
+    elif args.recipe == "rib":
         pattern = rib_pattern(args.width, args.height)
         craft_type = "knit"
     elif args.recipe == "seed":
@@ -92,22 +102,9 @@ def main(argv=None):
     # Handle output based on pattern type
     try:
         if args.format == "text":
-            # Chart patterns have as_text() method
-            if hasattr(pattern, "as_text"):
-                print(f"# {craft_type.title()} Pattern")
-                print(pattern.as_text())
-                # Show approximate dimensions for metric context
-                if craft_type == "knit":
-                    approx_width = args.width / 1.8  # ~1.8 sts/cm for DK
-                    approx_height = args.height / 2.4  # ~2.4 rows/cm for DK
-                else:
-                    approx_width = args.width / 1.4  # ~1.4 sts/cm for DK crochet
-                    approx_height = args.height / 1.6  # ~1.6 rows/cm for DK crochet
-                print(
-                    f"# Approximate size at DK gauge: {approx_width:.1f}×{approx_height:.1f}cm"
-                )
-            else:
-                print("Text format not available for this pattern type")
+            # All patterns now support as_text() method
+            print(f"# {craft_type.title()} Pattern")
+            print(to_text(pattern))
         elif args.format == "ascii":
             # Grid patterns have as_rows() method for ASCII export
             if hasattr(pattern, "as_rows"):

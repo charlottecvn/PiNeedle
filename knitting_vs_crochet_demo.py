@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 """
-Demonstration of clear distinctions between knitting and crochet in PiStitch.
-
-This script showcases how PiStitch properly separates knitting and crochet
-patterns, stitches, and terminology to respect the unique characteristics
-of each craft.
+Demonstration of distinctions between knitting and crochet in PiStitch.
 """
 
 import pistitch
@@ -112,6 +108,8 @@ def demonstrate_knitting_patterns():
     print_section("KNITTING PATTERN EXAMPLES")
 
     patterns = [
+        ("Garter Stitch", pistitch.garter_pattern(8, 4)),
+        ("Stockinette Stitch", pistitch.stockinette_pattern(8, 4)),
         ("2x2 Rib", pistitch.rib_pattern(8, 4, 2)),
         ("Seed Stitch", pistitch.seed_pattern(6, 3)),
         ("Cable Swatch", pistitch.cable_swatch(8, 4, 2)),
@@ -159,9 +157,11 @@ def demonstrate_cli_distinctions():
 
     print(" KNITTING COMMANDS:")
     knit_commands = [
+        ("garter", "Generate a garter pattern (knit every row)"),
+        ("stockinette", "Generate a stockinette pattern (knit RS, purl WS)"),
         ("rib", "Generate a knitting rib pattern"),
-        ("seed", "Generate a knitting seed stitch pattern"),
-        ("moss", "Generate a knitting moss stitch pattern"),
+        ("seed", "Generate a knitting seed pattern"),
+        ("moss", "Generate a knitting moss pattern"),
         ("cable", "Generate a knitting cable pattern"),
     ]
 
@@ -171,10 +171,10 @@ def demonstrate_cli_distinctions():
 
     print("\n CROCHET COMMANDS:")
     crochet_commands = [
-        ("granny", "Generate a crochet granny square (grid)"),
-        ("granny-chart", "Generate a crochet granny square (chart)"),
-        ("single-crochet", "Generate a single crochet rectangle"),
-        ("shell", "Generate a crochet shell stitch pattern"),
+        ("granny", "Generate a crochet granny square pattern (grid)"),
+        ("granny-chart", "Generate a crochet granny square pattern (chart)"),
+        ("single-crochet", "Generate a single crochet rectangle pattern"),
+        ("shell", "Generate a crochet shell pattern"),
     ]
 
     for cmd, desc in crochet_commands:
@@ -192,9 +192,12 @@ def demonstrate_terminology_differences():
     """Show how terminology differs between knitting and crochet."""
     print_section("TERMINOLOGY DIFFERENCES")
 
-    print(" KNITTING TERMINOLOGY:")
+    print("KNITTING TERMINOLOGY:")
     print("   • Rows: Right Side (RS) and Wrong Side (WS)")
     print("   • Stitches: k (knit), p (purl), yo (yarn over)")
+    print(
+        "   • Basic patterns: Garter pattern (knit every row), Stockinette pattern (knit RS, purl WS)"
+    )
     print("   • Tools: Needles (metric mm sizes)")
     print("   • Gauge: Stitches and rows per cm")
     print("   • Techniques: Cables, decreases (k2tog, ssk)")

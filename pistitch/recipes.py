@@ -14,6 +14,27 @@ from .patterns import (
 )
 
 
+def garter_pattern(width=24, height=16):
+    """Create a garter pattern (knit every row)."""
+    rows = []
+    for y in range(height):
+        stitches = [KnitStitch.K] * width
+        rows.append(KnitChartRow(stitches, rs=(y % 2 == 0), row_number=y + 1))
+    return KnitChart(rows)
+
+
+def stockinette_pattern(width=24, height=16):
+    """Create a stockinette pattern (knit RS, purl WS)."""
+    rows = []
+    for y in range(height):
+        if y % 2 == 0:  # RS rows
+            stitches = [KnitStitch.K] * width
+        else:  # WS rows
+            stitches = [KnitStitch.P] * width
+        rows.append(KnitChartRow(stitches, rs=(y % 2 == 0), row_number=y + 1))
+    return KnitChart(rows)
+
+
 def rib_pattern(width=24, height=16, rib=2):
     """Create a knitting rib pattern (e.g., 2x2 rib)."""
     rows = []
@@ -29,7 +50,7 @@ def rib_pattern(width=24, height=16, rib=2):
 
 
 def seed_pattern(width=24, height=16):
-    """Create a knitting seed stitch pattern."""
+    """Create a knitting seed pattern."""
     rows = []
     for y in range(height):
         stitches = []
@@ -43,7 +64,7 @@ def seed_pattern(width=24, height=16):
 
 
 def moss_pattern(width=24, height=16):
-    """Create a knitting moss stitch pattern (2x2 block alternation)."""
+    """Create a knitting moss pattern (2x2 block alternation)."""
     rows = []
     for y in range(height):
         stitches = []
@@ -160,3 +181,20 @@ def shell_stitch_pattern(width=24, height=8):
         rows.append(CrochetChartRow(row_stitches, is_round=False, row_number=row_num))
 
     return CrochetChart(rows)
+
+
+# Backwards compatibility aliases
+def garter_stitch(width=24, height=16):
+    """Create a garter stitch pattern (knit every row).
+
+    DEPRECATED: Use garter_pattern() instead.
+    """
+    return garter_pattern(width, height)
+
+
+def stockinette_stitch(width=24, height=16):
+    """Create a stockinette stitch pattern (knit RS, purl WS).
+
+    DEPRECATED: Use stockinette_pattern() instead.
+    """
+    return stockinette_pattern(width, height)

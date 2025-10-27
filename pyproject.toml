@@ -7,7 +7,7 @@ name = "pistitch"
 version = "0.1.0"
 description = "Generating knitting & crochet patterns"
 readme = "README.md"
-authors = [ { name = "Charlotte Cambier van Nooten" } ]
+authors = [ { name = "RAC" } ]
 license = { text = "MIT" }
 
 [tool.setuptools.packages.find]
