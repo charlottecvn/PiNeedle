@@ -17,6 +17,7 @@ python knitting_vs_crochet_demo.py
 ```
 
 ## Help & Documentation
+For more examples, see the [examples.md](examples.md) and [cli.md](cli.md).
 
 ### Get CLI Help
 ```bash
