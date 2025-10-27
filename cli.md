@@ -4,20 +4,20 @@ The CLI automatically detects whether you're creating a knitting or crochet patt
 
 ```bash
 # Knitting patterns
-pistitch --recipe garter --width 8 --height 4 --format text
-pistitch --recipe stockinette --width 8 --height 4 --format text
-pistitch --recipe rib --width 8 --height 4 --format text
-pistitch --recipe cable --width 12 --height 8 --format svg --out cable.svg
+pineedle --recipe garter --width 8 --height 4 --format text
+pineedle --recipe stockinette --width 8 --height 4 --format text
+pineedle --recipe rib --width 8 --height 4 --format text
+pineedle --recipe cable --width 12 --height 8 --format svg --out cable.svg
 
 # Crochet patterns
-pistitch --recipe granny-chart --rounds 4 --format text
-pistitch --recipe single-crochet --width 10 --height 6 --format text
-pistitch --recipe shell --width 12 --height 6 --format text
+pineedle --recipe granny-chart --rounds 4 --format text
+pineedle --recipe single-crochet --width 10 --height 6 --format text
+pineedle --recipe shell --width 12 --height 6 --format text
 
 # Export options
-pistitch --recipe granny --width 8 --format ascii    # Grid patterns
-pistitch --recipe granny --width 8 --format text     # Grid pattern instructions
-pistitch --recipe rib --format text                  # Chart pattern instructions
+pineedle --recipe granny --width 8 --format ascii    # Grid patterns
+pineedle --recipe granny --width 8 --format text     # Grid pattern instructions
+pineedle --recipe rib --format text                  # Chart pattern instructions
 ```
 
 ### CLI Options

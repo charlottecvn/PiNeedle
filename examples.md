@@ -4,10 +4,10 @@
 ### Knitting Patterns
 
 ```python
-import pistitch
+import pineedle
 
 # Create a knitting rib pattern
-rib_chart = pistitch.rib_pattern(width=8, height=4)
+rib_chart = pineedle.rib_pattern(width=8, height=4)
 print(rib_chart.as_text())
 # Output:
 # Row 1 (RS): k, k, p, p, k, k, p, p
@@ -15,7 +15,7 @@ print(rib_chart.as_text())
 # ...
 
 # Create a knitting pattern with gauge
-knit_pattern = pistitch.KnitPattern(10, 8)
+knit_pattern = pineedle.KnitPattern(10, 8)
 knit_pattern.set_gauge(1.8, 2.4, 4.5)  # 1.8 sts/cm, 2.4 rows/cm, 4.5mm needles
 knit_pattern.fill_garter()  # Default pattern for knitting
 print(knit_pattern.as_text())
@@ -26,16 +26,16 @@ print(knit_pattern.as_text())
 # Repeat for 8 rows
 # Finished size: 5.6 × 3.3 cm
 
-pistitch.to_svg(knit_pattern, "knit_pattern.svg")
+pineedle.to_svg(knit_pattern, "knit_pattern.svg")
 ```
 
 ### Crochet Patterns
 
 ```python
-import pistitch
+import pineedle
 
 # Create a crochet granny square chart
-granny_chart = pistitch.granny_square_chart(rounds=3)
+granny_chart = pineedle.granny_square_chart(rounds=3)
 print(granny_chart.as_text())
 # Output:
 # Rnd 1: ch, ch, ch, dc, dc, dc, ch, ch
@@ -43,11 +43,11 @@ print(granny_chart.as_text())
 # ...
 
 # Create a single crochet rectangle
-sc_rect = pistitch.single_crochet_rectangle(width=6, height=4)
+sc_rect = pineedle.single_crochet_rectangle(width=6, height=4)
 print(f"Worked in rounds: {sc_rect.is_worked_in_rounds()}")  # False
 
 # Create a crochet pattern with gauge and text export
-crochet_pattern = pistitch.CrochetPattern(8, 8)
+crochet_pattern = pineedle.CrochetPattern(8, 8)
 crochet_pattern.set_gauge(1.4, 1.6, 5.0)  # 1.4 sts/cm, 1.6 rows/cm, 5.0mm hook
 crochet_pattern.set_rounds(True)  # Worked in rounds
 crochet_pattern.fill_single_crochet()
@@ -65,10 +65,10 @@ print(crochet_pattern.as_text())
 ### Text Export Examples
 
 ```python
-import pistitch
+import pineedle
 
 # Grid pattern with text export (garter stitch)
-knit_pattern = pistitch.KnitPattern(8, 4)
+knit_pattern = pineedle.KnitPattern(8, 4)
 knit_pattern.set_gauge(1.8, 2.4, 4.5)
 knit_pattern.fill_garter()  # Default pattern for knitting
 print(knit_pattern.as_text())
@@ -92,7 +92,7 @@ print(knit_pattern.as_text())
 # Finished size: 4.4 × 1.7 cm
 
 # Chart pattern with text export
-garter_chart = pistitch.garter_stitch(8, 4)
+garter_chart = pineedle.garter_stitch(8, 4)
 print(garter_chart.as_text())
 # Output:
 # Row 1 (RS): k, k, k, k, k, k, k, k
@@ -100,7 +100,7 @@ print(garter_chart.as_text())
 # ...
 
 # More complex chart pattern
-rib_chart = pistitch.rib_pattern(8, 4)
+rib_chart = pineedle.rib_pattern(8, 4)
 print(rib_chart.as_text())
 # Output:
 # Row 1 (RS): k, k, p, p, k, k, p, p
@@ -108,6 +108,6 @@ print(rib_chart.as_text())
 # ...
 
 # Use to_text() function for any pattern
-print(pistitch.to_text(knit_pattern))
-print(pistitch.to_text(rib_chart))
+print(pineedle.to_text(knit_pattern))
+print(pineedle.to_text(rib_chart))
 ```

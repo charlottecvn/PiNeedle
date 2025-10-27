@@ -1,4 +1,4 @@
-# PiStitch
+# PiNeedle
 
 A Python package for generating knitting and crochet patterns. The CLI automatically detects whether you're creating a knitting or crochet pattern.
 
@@ -9,8 +9,8 @@ A Python package for generating knitting and crochet patterns. The CLI automatic
 pip install -e .
 
 # Try basic patterns
-pistitch --recipe garter --width 8 --height 4 --format text
-pistitch --recipe granny --width 6 --format ascii
+pineedle --recipe garter --width 8 --height 4 --format text
+pineedle --recipe granny --width 6 --format ascii
 
 # Run demo
 python knitting_vs_crochet_demo.py
@@ -21,7 +21,7 @@ For more examples, see the [examples.md](examples.md) and [cli.md](cli.md).
 
 ### Get CLI Help
 ```bash
-pistitch --help                    # Show all available options
+pineedle --help                    # Show all available options
 ```
 
 ### Available Patterns
@@ -31,13 +31,13 @@ pistitch --help                    # Show all available options
 ### Quick Pattern Examples
 ```bash
 # Beginner-friendly garter pattern
-pistitch --recipe garter --width 10 --height 5 --format text
+pineedle --recipe garter --width 10 --height 5 --format text
 
 # Classic stockinette pattern
-pistitch --recipe stockinette --width 10 --height 5 --format text
+pineedle --recipe stockinette --width 10 --height 5 --format text
 
 # Traditional granny square
-pistitch --recipe granny --width 8 --format ascii
+pineedle --recipe granny --width 8 --format ascii
 ```
 
 ## Testing
@@ -48,7 +48,7 @@ pistitch --recipe granny --width 8 --format ascii
 python -m pytest tests/ -q
 
 # Quick functionality test
-python -c "import pistitch; print(pistitch.garter_pattern(6,3).as_text())"
+python -c "import pineedle; print(pineedle.garter_pattern(6,3).as_text())"
 ```
 
 ## Features

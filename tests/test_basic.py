@@ -1,5 +1,5 @@
-from pistitch import KnitPattern
-from pistitch.exporters import to_ascii
+from pineedle import KnitPattern
+from pineedle.exporters import to_ascii
 
 
 def test_checkerboard_ascii_contains_hashes_and_dots():

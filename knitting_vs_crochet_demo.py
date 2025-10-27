@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Demonstration of distinctions between knitting and crochet in PiStitch.
+Demonstration of distinctions between knitting and crochet in pineedle.
 """
 
-import pistitch
+import pineedle
 
 
 def print_section(title):
@@ -51,8 +51,8 @@ def demonstrate_stitch_distinctions():
     for abbrev, description in crochet_stitches:
         print(f"   • {abbrev:<6} = {description}")
 
-    print(f"\nTotal knitting stitches: {len(list(pistitch.KnitStitch))}")
-    print(f"Total crochet stitches: {len(list(pistitch.CrochetStitch))}")
+    print(f"\nTotal knitting stitches: {len(list(pineedle.KnitStitch))}")
+    print(f"Total crochet stitches: {len(list(pineedle.CrochetStitch))}")
     print("No overlap except for EMPTY marker")
 
 
@@ -63,7 +63,7 @@ def demonstrate_pattern_types():
     print(" KNITTING PATTERNS:")
 
     # Knitting grid pattern with gauge
-    knit_pattern = pistitch.KnitPattern(10, 8)
+    knit_pattern = pineedle.KnitPattern(10, 8)
     knit_pattern.set_gauge(1.8, 2.4, 4.5)  # 1.8 sts/cm, 2.4 rows/cm, 4.5mm needles
 
     print(f"   Grid Pattern: {type(knit_pattern).__name__}")
@@ -72,7 +72,7 @@ def demonstrate_pattern_types():
     print(f"   • Needle size: {knit_pattern.needle_size_mm}mm")
 
     # Knitting chart pattern
-    rib_chart = pistitch.rib_pattern(8, 4)
+    rib_chart = pineedle.rib_pattern(8, 4)
     print(f"   Chart Pattern: {type(rib_chart).__name__}")
     print("   • Uses knitting row terminology (RS/WS)")
     print("   • Contains knitting stitches (k, p)")
@@ -80,7 +80,7 @@ def demonstrate_pattern_types():
     print("\n CROCHET PATTERNS:")
 
     # Crochet grid pattern with gauge and rounds
-    crochet_pattern = pistitch.CrochetPattern(8, 8)
+    crochet_pattern = pineedle.CrochetPattern(8, 8)
     crochet_pattern.set_gauge(1.4, 1.6, 5.0)  # 1.4 sts/cm, 1.6 rows/cm, 5.0mm hook
     crochet_pattern.set_rounds(True)  # Worked in rounds
 
@@ -91,8 +91,8 @@ def demonstrate_pattern_types():
     print(f"   • Worked in rounds: {crochet_pattern.work_in_rounds}")
 
     # Crochet chart patterns
-    granny_chart = pistitch.granny_square_chart(3)
-    rect_chart = pistitch.single_crochet_rectangle(6, 4)
+    granny_chart = pineedle.granny_square_chart(3)
+    rect_chart = pineedle.single_crochet_rectangle(6, 4)
 
     print(f"   Chart Pattern (rounds): {type(granny_chart).__name__}")
     print(f"   • Worked in rounds: {granny_chart.is_worked_in_rounds()}")
@@ -108,11 +108,11 @@ def demonstrate_knitting_patterns():
     print_section("KNITTING PATTERN EXAMPLES")
 
     patterns = [
-        ("Garter Stitch", pistitch.garter_pattern(8, 4)),
-        ("Stockinette Stitch", pistitch.stockinette_pattern(8, 4)),
-        ("2x2 Rib", pistitch.rib_pattern(8, 4, 2)),
-        ("Seed Stitch", pistitch.seed_pattern(6, 3)),
-        ("Cable Swatch", pistitch.cable_swatch(8, 4, 2)),
+        ("Garter Stitch", pineedle.garter_pattern(8, 4)),
+        ("Stockinette Stitch", pineedle.stockinette_pattern(8, 4)),
+        ("2x2 Rib", pineedle.rib_pattern(8, 4, 2)),
+        ("Seed Stitch", pineedle.seed_pattern(6, 3)),
+        ("Cable Swatch", pineedle.cable_swatch(8, 4, 2)),
     ]
 
     for name, pattern in patterns:
@@ -135,9 +135,9 @@ def demonstrate_crochet_patterns():
     print_section("CROCHET PATTERN EXAMPLES")
 
     patterns = [
-        ("Granny Square (rounds)", pistitch.granny_square_chart(3)),
-        ("Single Crochet Rectangle", pistitch.single_crochet_rectangle(6, 3)),
-        ("Shell Stitch", pistitch.shell_stitch_pattern(12, 3)),
+        ("Granny Square (rounds)", pineedle.granny_square_chart(3)),
+        ("Single Crochet Rectangle", pineedle.single_crochet_rectangle(6, 3)),
+        ("Shell Stitch", pineedle.shell_stitch_pattern(12, 3)),
     ]
 
     for name, pattern in patterns:
@@ -166,7 +166,7 @@ def demonstrate_cli_distinctions():
     ]
 
     for cmd, desc in knit_commands:
-        print(f"   pistitch --recipe {cmd} --format text")
+        print(f"   pineedle --recipe {cmd} --format text")
         print(f"   → {desc}")
 
     print("\n CROCHET COMMANDS:")
@@ -178,7 +178,7 @@ def demonstrate_cli_distinctions():
     ]
 
     for cmd, desc in crochet_commands:
-        print(f"   pistitch --recipe {cmd} --format text")
+        print(f"   pineedle --recipe {cmd} --format text")
         print(f"   → {desc}")
 
     print("\n FORMAT COMPATIBILITY:")
@@ -221,19 +221,19 @@ def demonstrate_metric_sizing():
     print("   • Hook sizes in millimeters (mm)")
 
     print("\n KNITTING NEEDLE SIZES (mm):")
-    from pistitch import MetricNeedleSizes
+    from pineedle import MetricNeedleSizes
 
     common_sizes = MetricNeedleSizes.SIZES[:10]  # First 10 sizes
     print(f"   Common sizes: {', '.join(f'{s}mm' for s in common_sizes)}...")
 
     print("\n CROCHET HOOK SIZES (mm):")
-    from pistitch import MetricHookSizes
+    from pineedle import MetricHookSizes
 
     common_hook_sizes = MetricHookSizes.SIZES[:10]  # First 10 sizes
     print(f"   Common sizes: {', '.join(f'{s}mm' for s in common_hook_sizes)}...")
 
     print("\n YARN WEIGHT RECOMMENDATIONS:")
-    from pistitch import get_gauge_info
+    from pineedle import get_gauge_info
 
     # Show DK weight yarn info for knitting
     dk_knit_info = get_gauge_info("dk", "knit")
@@ -250,7 +250,7 @@ def demonstrate_metric_sizing():
         print(f"   • Recommended hook: {dk_crochet_info['recommended_tool_mm']}mm")
 
     print("\n PATTERN DIMENSIONS:")
-    from pistitch import calculate_pattern_dimensions, suggest_pattern_size
+    from pineedle import calculate_pattern_dimensions, suggest_pattern_size
 
     # Calculate dimensions for a sample pattern
     dimensions = calculate_pattern_dimensions(

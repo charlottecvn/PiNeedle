@@ -1,4 +1,4 @@
-"""Human-readable textual pattern format for knit charts."""
+"""Textual pattern format for knit charts."""
 
 
 def chart_to_text(chart):

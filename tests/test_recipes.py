@@ -1,5 +1,5 @@
-from pistitch.recipes import rib_pattern, seed_pattern, moss_pattern, cable_swatch
-from pistitch.patterns import Stitch
+from pineedle.recipes import rib_pattern, seed_pattern, moss_pattern, cable_swatch
+from pineedle.patterns import Stitch
 
 
 def test_rib_pattern_counts():

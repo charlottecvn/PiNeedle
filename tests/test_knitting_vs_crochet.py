@@ -1,7 +1,7 @@
-"""Test proper distinction between knitting and crochet patterns."""
+"""Test distinction between knitting and crochet patterns."""
 
 import pytest
-from pistitch import (
+from pineedle import (
     KnitStitch,
     CrochetStitch,
     KnitChart,
@@ -196,7 +196,7 @@ class TestBackwardsCompatibility:
 
     def test_old_stitch_enum_still_works(self):
         """The old Stitch enum should still work for backwards compatibility."""
-        from pistitch import Stitch
+        from pineedle import Stitch
 
         # Should be an alias to KnitStitch
         assert Stitch.K == "k"
@@ -204,7 +204,7 @@ class TestBackwardsCompatibility:
 
     def test_old_chart_class_still_works(self):
         """The old Chart class should still work for backwards compatibility."""
-        from pistitch import Chart
+        from pineedle import Chart
 
         # Should be an alias to KnitChart
         chart = rib_pattern(4, 2)

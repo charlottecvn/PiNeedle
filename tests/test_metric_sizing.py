@@ -1,7 +1,7 @@
 """Test metric sizing utilities and European conventions."""
 
 import pytest
-from pistitch import (
+from pineedle import (
     MetricNeedleSizes,
     MetricHookSizes,
     GaugeConverter,

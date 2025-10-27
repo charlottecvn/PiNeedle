@@ -1,7 +1,7 @@
 """Test text export functionality for grid patterns."""
 
 import pytest
-from pistitch import (
+from pineedle import (
     Pattern,
     KnitPattern,
     CrochetPattern,
@@ -222,7 +222,7 @@ class TestTextExportFunction:
 
     def test_to_text_works_with_charts(self):
         """Test that to_text() works with chart patterns."""
-        from pistitch import rib_pattern
+        from pineedle import rib_pattern
 
         chart = rib_pattern(8, 4)
         text = to_text(chart)

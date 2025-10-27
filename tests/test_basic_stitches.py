@@ -1,7 +1,7 @@
 """Test basic knitting stitch patterns (garter, stockinette)."""
 
 import pytest
-from pistitch import (
+from pineedle import (
     garter_pattern,
     stockinette_pattern,
     garter_stitch,  # backwards compatibility

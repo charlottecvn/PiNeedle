@@ -1,4 +1,4 @@
-"""Command-line interface for PiStitch."""
+"""Command-line interface for pineedle."""
 
 import argparse
 from .recipes import (
@@ -18,9 +18,9 @@ from .exporters import to_svg, to_ascii, to_png, to_pdf, to_text
 
 def main(argv=None):
     parser = argparse.ArgumentParser(
-        prog="pistitch",
+        prog="pineedle",
         description="Generate knitting and crochet patterns (uses metric measurements: cm, mm)",
-        epilog="Examples: pistitch --recipe rib --width 20 --height 15 (creates ~11×6cm at DK gauge)\n"
+        epilog="Examples: pineedle --recipe rib --width 20 --height 15 (creates ~11×6cm at DK gauge)\n"
         "For a comprehensive demo of knitting vs crochet distinctions, run: python knitting_vs_crochet_demo.py",
     )
     parser.add_argument(

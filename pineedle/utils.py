@@ -1,4 +1,4 @@
-"""Tiny helper utilities for later expansion."""
+"""Helper utilities."""
 
 
 def repeat_pattern(pattern_fn, times=1):
