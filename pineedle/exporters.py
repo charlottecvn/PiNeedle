@@ -1,4 +1,4 @@
-"""Exporters for pineedle patterns."""
+"""Exporters for PiNeedle patterns."""
 
 import io
 from PIL import Image, ImageDraw

@@ -1,4 +1,4 @@
-"""Command-line interface for pineedle."""
+"""Command-line interface for PiNeedle."""
 
 import argparse
 from .recipes import (

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Demonstration of distinctions between knitting and crochet in pineedle.
+Demonstration of distinctions between knitting and crochet in PiNeedle.
 """
 
 import pineedle

@@ -1,4 +1,4 @@
-"""pineedle package — knitting & crochet pattern generation."""
+"""PiNeedle package — knitting & crochet pattern generation."""
 
 from .patterns import (
     Pattern,
